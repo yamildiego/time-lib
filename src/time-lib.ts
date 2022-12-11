@@ -25,9 +25,9 @@ class Time {
     let minutes: number = Math.trunc(minutesTotal - Math.trunc(hoursTotal) * 60);
     let hours: number = Math.trunc(hoursTotal);
 
-    let value_s = seconds < 10 ? `0${seconds}` : `${seconds}`;
-    let value_i = minutes < 10 ? `0${minutes}` : `${minutes}`;
-    let value_h = hours < 10 ? `0${hours}` : `${hours}`;
+    let value_s = this.#addZeros(seconds);
+    let value_i = this.#addZeros(minutes);
+    let value_h = this.#addZeros(hours);
     let value_g = `${hours}`;
 
     return p_format
@@ -35,6 +35,14 @@ class Time {
       .replace(new RegExp("{i}", "g"), value_i)
       .replace(new RegExp("{h}", "g"), value_h)
       .replace(new RegExp("{g}", "g"), value_g);
+  };
+
+  #addZeros = (value: number): string => {
+    let result: string = "";
+    if (Math.abs(value) < 10) result = value < 0 ? `-0${value.substring(1)}` : `0${value}`;
+    else result = `${value}`;
+
+    return result;
   };
 }
 
