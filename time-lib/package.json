@@ -1,6 +1,6 @@
 {
     "name": "yd-time-lib",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "",
     "main": "./time-lib.js",
     "types": "./time-lib.d.ts",
@@ -13,7 +13,10 @@
         "test": "echo \"Error: no test specified.\" && exit 1"
     },
     "keywords": [
-        "Chess"
+        "format",
+        "time",
+        "time calculator",
+        "operations with times"
     ],
     "author": "Yamil Diego <yamildiego91@gmail.com> (https://yamildiego.com)",
     "license": "MIT"
