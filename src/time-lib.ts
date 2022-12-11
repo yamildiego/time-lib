@@ -25,21 +25,16 @@ class Time {
     let minutes: number = Math.trunc(minutesTotal - Math.trunc(hoursTotal) * 60);
     let hours: number = Math.trunc(hoursTotal);
 
-    let value_s = this.#addZeros(seconds);
-    let value_i = this.#addZeros(minutes);
-    let value_h = this.#addZeros(hours);
-    let value_g = `${hours}`;
-
     return p_format
-      .replace(new RegExp("{s}", "g"), value_s)
-      .replace(new RegExp("{i}", "g"), value_i)
-      .replace(new RegExp("{h}", "g"), value_h)
-      .replace(new RegExp("{g}", "g"), value_g);
+      .replace(new RegExp("{s}", "g"), this.#addZeros(seconds))
+      .replace(new RegExp("{i}", "g"), this.#addZeros(minutes))
+      .replace(new RegExp("{h}", "g"), this.#addZeros(hours))
+      .replace(new RegExp("{g}", "g"), `${hours}`);
   };
 
   #addZeros = (value: number): string => {
     let result: string = "";
-    if (Math.abs(value) < 10) result = value < 0 ? `-0${value.substring(1)}` : `0${value}`;
+    if (Math.abs(value) < 10) result = value < 0 ? `-0${`${value}`.substring(1)}` : `0${value}`;
     else result = `${value}`;
 
     return result;

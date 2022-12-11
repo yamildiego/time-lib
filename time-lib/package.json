@@ -1,6 +1,6 @@
 {
     "name": "yd-time-lib",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "",
     "main": "./time-lib.js",
     "types": "./time-lib.d.ts",
