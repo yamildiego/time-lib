@@ -1,15 +1,22 @@
 {
     "name": "yd-time-lib",
-    "version": "1.0.3",
-    "description": "",
+    "version": "1.0.4",
+    "description": "Time lib, allow you to format milliseconds and make basic operations",
+    "license": "MIT",
+    "repository": "github:yamildiego/time-lib",
     "main": "./time-lib.js",
     "types": "./time-lib.d.ts",
-    "dependencies": {
+    "engines": {
+        "node": ">=14"
+    },
+    "dependencies": {},
+    "devDependencies": {
         "browserify": "latest",
         "@types/browserify": "latest",
         "typescript": "next"
     },
     "scripts": {
+        "deploy": "npm publish --access=public",
         "test": "echo \"Error: no test specified.\" && exit 1"
     },
     "keywords": [
@@ -18,6 +25,5 @@
         "time calculator",
         "operations with times"
     ],
-    "author": "Yamil Diego <yamildiego91@gmail.com> (https://yamildiego.com)",
-    "license": "MIT"
+    "author": "Yamil Diego <yamildiego91@gmail.com> (https://yamildiego.com)"
 }
