@@ -17,6 +17,8 @@ class Time {
   diff = (p_milliseconds: number): Time => new Time(this.milliseconds - p_milliseconds);
 
   format = (p_format: string = "h:i:s"): string => {
+    this.milliseconds = Math.trunc(this.milliseconds / 1000) * 1000;
+
     let secondsTotal: number = this.milliseconds / 1000;
     let minutesTotal: number = secondsTotal / 60;
     let hoursTotal: number = minutesTotal / 60;

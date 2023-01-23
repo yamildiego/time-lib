@@ -1,14 +1,27 @@
 {
   "name": "yd-time-lib",
-  "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "build": "tsc ./src/time-lib.ts --target es2016 --outDir time-lib --declaration && copy README.md C:\\project\\time-lib\\time-lib",
-    "start": "npx webpack && node ./dist/time-lib.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "1.0.5",
+  "description": "Time lib, allow you to format milliseconds and make basic operations",
+  "repository": "github:yamildiego/time-lib",
+  "main": "./time-lib/time-lib.js",
+  "types": "./time-lib/time-lib.d.ts",
+  "engines": {
+    "node": ">=14"
   },
-  "author": "Yamil Diego",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "start": "npx webpack && node ./dist/time-lib.js",
+    "deploy": "npm run build && npm publish --access=public"
+  },
+  "author": "Yamil Diego <yamildiego91@gmail.com> (https://yamildiego.com)",
   "license": "MIT",
+  "dependencies": {},
+  "keywords": [
+    "format",
+    "time",
+    "time calculator",
+    "operations with times"
+  ],
   "devDependencies": {
     "ts-loader": "^9.4.1",
     "typescript": "^4.9.3",
